@@ -1,0 +1,251 @@
+@import "abstracts/colors";
+@import "abstracts/fonts";
+@import "abstracts/reset";
+
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+// BUSCAR BUENOS NOMBRES PARA LAS CLASES Y ACOMODAR TODO BIEN
+
+body {
+  background-color: $light-grayish-cyan;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5.5rem;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  background-color: $white;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: 920px;
+  filter: drop-shadow(0px 30px 30px #00494d34);
+
+  //   max-width: 58rem;
+
+  & > div {
+    flex: 1;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inputs {
+    padding: 0.75rem 1rem;
+    gap: 2.5rem;
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .input-info {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          color: red;
+          display: none;
+        }
+      }
+
+      &.error {
+        p {
+          display: block;
+        }
+        input {
+          border-color: red;
+        }
+      }
+    }
+
+    .buttons {
+      margin-top: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+
+      button {
+        font-size: 1.5rem;
+        padding: 0.4rem 0;
+        border-radius: 0.25rem;
+        color: $white;
+        background-color: $very-dark-cyan;
+      }
+      input {
+        padding: 0 0.4rem;
+      }
+    }
+  }
+  .results {
+    padding: 2.5rem;
+    background-color: $very-dark-cyan;
+    justify-content: space-between;
+    gap: 2rem;
+
+    // CAPAZ QUE HAY QUE BORRARLO
+    max-width: 414px;
+  }
+
+  button {
+    border: none;
+  }
+}
+
+.reset-btn {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: $strong-cyan;
+  color: $very-dark-cyan;
+
+  &:hover {
+    background-color: $light-cyan;
+  }
+
+  &:disabled {
+    background-color: $strong-cyan;
+    opacity: 0.5;
+  }
+}
+
+input {
+  font-size: 1.5rem;
+  border: none;
+  text-align: right;
+  color: $very-dark-cyan;
+  padding: 0.4rem 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid transparent;
+  // border: 3px solid transparent;
+  caret-color: $strong-cyan;
+  background-color: $very-light-grayish-cyan;
+
+  &:focus {
+    outline: none;
+    border-color: $strong-cyan;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::placeholder {
+    color: $grayish-cyan;
+  }
+}
+
+label {
+  color: $dark-grayish-cyan;
+}
+
+#bill {
+  background-image: url(../assets/icon-dollar.svg);
+  background-repeat: no-repeat;
+  background-position: 20px 16px;
+}
+#people {
+  background-image: url(../assets/icon-person.svg);
+  background-repeat: no-repeat;
+  background-position: 20px 16px;
+}
+#tip {
+  &::placeholder {
+    text-align: center;
+    color: $dark-grayish-cyan;
+  }
+}
+
+.data-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: $white;
+  }
+  .description {
+    color: $grayish-cyan;
+    font-size: 0.8rem;
+  }
+  .amount {
+    font-size: 3rem;
+    color: $strong-cyan;
+  }
+}
+
+.buttons button {
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $light-cyan !important;
+    color: $very-dark-cyan !important;
+  }
+
+  &.active {
+    background-color: $strong-cyan !important;
+    color: $very-dark-cyan !important;
+  }
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .App {
+    gap: 4rem;
+    justify-content: space-between;
+  }
+  .logo {
+    margin-top: 4rem;
+  }
+  .container {
+    flex-direction: column;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    // padding: 1rem;
+    // border-radius: 0;
+
+    .inputs {
+      gap: 2rem;
+      padding: 0.5rem;
+    }
+    .results {
+      padding: 1.5rem;
+      max-width: unset;
+    }
+  }
+  .data-container {
+    gap: 0.5rem;
+  }
+  .buttons {
+    gap: 0.75rem !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+}
