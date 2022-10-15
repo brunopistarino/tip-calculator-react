@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { ReactComponent as Logo } from "./assets/logo.svg";
 
 function App() {
-  const [bill, setBill] = useState(142.55);
-  const [tip, setTip] = useState(15);
-  const inputTip = useRef();
-  const [people, setPeople] = useState(5);
+  const [bill, setBill] = useState("");
+  const [tip, setTip] = useState("");
+  const [people, setPeople] = useState("");
   const [valid, setValid] = useState(false);
   const [tipAmountPerson, setTipAmountPerson] = useState(0);
   const [totalPerson, setTotalPerson] = useState(0);
+  const inputTip = useRef();
 
   const handleBillChange = (e) => {
     setBill(e.target.value);
@@ -44,11 +44,7 @@ function App() {
     }
     if (people !== "" || tip !== "" || bill !== "") {
       setValid(true);
-      console.log("valid");
     }
-    console.log("bill", bill);
-    console.log("tip", tip);
-    console.log("people", people);
   }, [bill, tip, people]);
 
   return (
